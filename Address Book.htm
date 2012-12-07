@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0088)http://wfs.sbcc.edu/faculty/spstrenn/web/cs137/address_book/address_book_assignment.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Address Book</title>
+<link href="./Address Book_files/StrennSBCC.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://wfs.sbcc.edu/faculty/spstrenn/web/sbcc_favicon.png">
+<link href="./Address Book_files/css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="assignmentTitleRow">Address Book Assignment (45 pts)</div>
+<div class="boxGrey">
+  <p><br>
+  The purpose of this assignment are to become familiar with the development and use of lists of data.</p>
+  <h2>Functional Requirements</h2>
+  <p><img src="./Address Book_files/contacts.jpg" alt="contacts" width="300" height="302" class="figureTopRight">The address book program&nbsp;receives commands from the standard input.&nbsp; The commands allow the user to add, edit, and delete contacts, as well as load or save contacts from/to a file.&nbsp; Sorting of contacts is extra credit.&nbsp; Each contact has a first name, last name, email address, and phone number.</p>
+  <p>In more detail, write a program that:</p>
+  <ol>
+    <li>Prints "<span class="console_output">Ready\n</span>" to the stdout.</li>
+    <li>While the quit command has not been received:
+    </li>
+  </ol>
+  <ol>
+    <ol>
+      <li>Receives a command from the <strong>standard input (<strong>do not print a prompt, just get the command</strong>) </strong> and executes the command.&nbsp; Each command consists of a command code on one line, plus one or more parameters, each on a separate line.&nbsp;  Each command code is a single character.&nbsp; The list of commands and associated parameters is given below:<br>
+        <br>
+        <ol>
+          <li>Add a new contact:
+            <ol>
+              <li>Code:&nbsp; <span class="code">a</span></li>
+              <li>First parameter:&nbsp; 0-based index where the new contact should be inserted.&nbsp; 0 would mean in front of the first contact&nbsp;in the list, 1 would mean in front of the second contact in the list, and so on.&nbsp; This value will not be greater than the current number of contacts in the address book.</li>
+              <li>Second parameter: String containing a comma delimited list of contact property values.&nbsp; The order is last_name, first_name, email, phone_number</li>
+              <li>Example:&nbsp;<span class="code"><br>
+                </span><span class="console_input">a<br>
+                1<br>
+                SMITH,AUNDREA,asmith@ign.com,8001110001</span><span class="code"><br>
+                <br>
+              </span></li>
+            </ol>
+          </li>
+          <li>Delete a contact:
+            <ol>
+              <li>Code:&nbsp; <span class="code">d</span></li>
+              <li>First parameter:&nbsp; 0-based index of the contact to delete.&nbsp; NOTE:&nbsp; if the index is higher than the number of contacts - 1, do nothing.</li>
+              <li>Example:&nbsp;<span class="console_input"> <br>
+                d<br>
+                1</span><span class="code"><br>
+                <br>
+              </span> </li>
+            </ol>
+          </li>
+          <li>Get a contact:
+            <ol>
+              <li>Code:&nbsp;g</li>
+              <li>First parameter:&nbsp; 0-based index of the contact.</li>
+              <li>Example:<br>
+                <span class="console_input">g<br>
+                1</span><span class="code"><br>
+                </span>Output to stdout:  The value of the requested field, terminated with a \n.&nbsp; E.g. <span class="code">"</span><span class="console_output">WILSON,HORACE,hwilson@mayoclinic.com,8001110008\n</span><span class="code">"</span><br>
+                <br>
+              </li>
+            </ol>
+          </li>
+          <li>
+            Get a field:
+            <ol>
+              <li>Code:&nbsp;<span class="code">f</span></li>
+              <li>First parameter:&nbsp; 0-based index of the contact.</li>
+              <li>Second parameter: Name of the field to get.&nbsp; Valid values are firstName, lastName, email, phoneNumber.</li>
+              <li>Example:<br>
+                <span class="console_input">f<br>
+                1<br>
+              lastName</span></li>
+              <li>Output to stdout:  The value of the requested field, terminated with a \n.&nbsp; E.g. <span class="code">"</span><span class="console_output">SMITH\n</span><span class="code">"</span><br>
+                <br>
+              </li>
+            </ol>
+          </li>
+          <li>Get the number of contacts in the list:
+            <ol>
+              <li>Code: n</li>
+              <li>Example:<br>
+              <span class="console_input">n</span></li>
+              <li>Output to stdout:&nbsp; The number of contacts in the list, terminated with a \n.&nbsp; E.g. "<span class="console_output">10\n</span>".<br>
+                <br>
+              </li>
+            </ol>
+          </li>
+          <li>Load a file:
+            <ol>
+              <li>Code:&nbsp;<span class="code">l</span></li>
+              <li>First parameter:&nbsp; path&nbsp;of the file to load.</li>
+              <li>Notes:&nbsp;The file format is CSV.&nbsp; There is one header line that describes the fields, then one contact per&nbsp;line thereafter.&nbsp; The order of the contact information is the same as that of the second parameter of the add command.&nbsp; If the address book is not empty, this command adds the loaded contacts at the end of the current list.&nbsp; Here is an <a href="http://wfs.sbcc.edu/faculty/spstrenn/web/cs137/address_book/CS137%20Test%20Addresses%20Small.csv">example file</a>&nbsp; (note: if you want to see what's in this file, open it in a text editor rather than a spreadsheet program).</li>
+              <li>Example:&nbsp; <br>
+                <span class="console_input">l<br>
+                mycontacts.csv</span><br>
+                <span class="code"><br>
+              </span> </li>
+            </ol>
+          </li>
+          <li>Save the contacts to a file:
+            <ol>
+              <li>Code:&nbsp;<span class="code">s</span></li>
+              <li>First parameter:&nbsp; path&nbsp;of the file to save to.</li>
+              <li>Notes:&nbsp; The file format is CSV, one contact per&nbsp;line.&nbsp; If the file already exists, it is overwritten.&nbsp;&nbsp; </li>
+              <li>Example:&nbsp; <span class="code"><br>
+                </span><span class="console_input">s<br>
+                mycontacts.csv</span><br>
+                <br>
+              </li>
+            </ol>
+          </li>
+          <li>Quit program:
+            <ol>
+              <li>Code:&nbsp;<span class="code">q</span></li>
+              <li>Example:<br>
+              <span class="console_input">q</span></li>
+              <li>Output to stdout:&nbsp; "<span class="console_output">Complete\n</span>"</li>
+            </ol>
+            <br>
+          </li>
+          <li>(EXTRA CREDIT)&nbsp; Edit a contact:
+            <ol>
+              <li>Code:&nbsp; <span class="code">e</span></li>
+              <li>First parameter:&nbsp; 0-based index of the contact that is to be changed.</li>
+              <li>Second parameter: Name of the field to edit.&nbsp; Valid values are firstName, lastName, email, phoneNumber.</li>
+              <li>Third parameter:&nbsp;new value of the field.</li>
+              <li>Example:&nbsp; <br>
+                <span class="console_input">e<br>
+                3<br>
+                phoneNumber<br>
+                8002220001</span><span class="code"><br>
+                <br>
+              </span></li>
+            </ol>
+          </li>
+          <li>(EXTRA CREDIT)&nbsp; Sort the contacts:
+            <ol>
+              <li>Code:&nbsp;<span class="code">o</span></li>
+              <li>Notes:&nbsp; Sort order is ascending based on last name, then first name, then email, then phone number.</li>
+              <li>Example:&nbsp; <br>
+                <span class="console_input">o</span><br>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </ol>
+  <h2>Non-Functional Requirements</h2>
+  <ol>
+    <li>Each contact must be stored in&nbsp;a struct.  <br>
+      <br>
+    </li>
+    <li>All fields of the contact can contain up to 255 characters.<br>
+      <br>
+    </li>
+    <li>You can assume that contact field values will not contain commas.&nbsp; E.g. you won't be given a first name like <span class="code">Au,ndrea</span>.<br>
+      <br>
+    </li>
+    <li>Your program must store the contacts as an ordered list (not necessarily sorted).&nbsp; You can implement the list using either an array or a linked list.<br>
+      <br>
+      
+    </li>
+    <li>Your project name must follow the pattern: {FLname}AddressBook, where   {FLname} is replaced by the first letter of your first name plus your   last name. E.g. if your name is Maria Marciano, your project name must   be MMarcianoAddressBook. <em><strong>If your project name does not follow this pattern, it will not be graded</strong></em>.<br>
+      <br>
+    </li>
+    <li>Your source code must be split into at least two.c files and one .h file.&nbsp; An example would be main.c, address_book.c, address_book.h.<br>
+      <br>
+    </li>
+    <li>All source code files must be properly formatted (use Ctrl-Shift-f early and often).<br>
+      <br>
+    </li>
+    <li>The first executable line of your program must turn off output buffering.&nbsp; This is a requirement for automated testing.&nbsp;The following line will do the trick:<br>
+      <span class="console_output"><br>
+      setvbuf(stdout, NULL, _IONBF, 0);</span><br>
+      <br>
+    </li>
+    <li>Your program must be organized into a set of cohesive functions.<br>
+      <br>
+    </li>
+    <li>Your program must be properly commented.</li>
+  </ol>
+  <h2>Sample stdin 1</h2>
+  <p class="console_input">a<br>
+    0<br>
+    WILSON,HORACE,hwilson@mayoclinic.com,8001110008<br>
+    a<br>
+    1<br>
+    JOHNSON,ROSALIA,rjohnson@pricegrabber.com,8001110002<br>
+    a<br>
+    1<br>
+    WILLIAMS,SACHIKO,swilliams@about.com,8001110003<br>
+    g<br>
+    2<br>
+    q</p>
+  <h2>Sample stdout  1</h2>
+  <p><span class="console_output">Ready<br>
+    JOHNSON,ROSALIA,rjohnson@pricegrabber.com,8001110002<br>
+    Complete</span><span class="code"><br>
+    </span>
+  </p>
+  <h2>Sample stdin 2</h2>
+  <p><span class="console_input">a<br>
+    0<br>
+    SMITH,AUNDREA,asmith@ign.com,8001110001<br>
+    a<br>
+    1<br>
+    JOHNSON,ROSALIA,rjohnson@pricegrabber.com,8001110002<br>
+    a<br>
+    1<br>
+  WILLIAMS,SACHIKO,swilliams@about.com,8001110003<br>
+    d<br>
+    1<br>
+    s<br>
+    mycontacts.csv <br>
+    q</span><br>
+  </p>
+  <h2>Sample stdout 2</h2>
+  <p class="console_output">Ready<br>
+    Complete
+  </p>
+  <h2>Sample Output File 2 (mycontacts.csv)</h2>
+  <p><span class="console_output">lastName,firstName,email,phoneNumber<br>
+    SMITH,AUNDREA,asmith@ign.com,8001110001<br>
+    JOHNSON,ROSALIA,rjohnson@pricegrabber.com,8001110002</span><br>
+  </p>
+  <h2>Test/Grade your program:</h2>
+  <ol>
+    <li>Download (right-click, Save Link As... ) <a href="http://wfs.sbcc.edu/faculty/spstrenn/web/cs137/address_book/build.xml">build.xml</a> into your project directory. <br>
+      <br>
+    </li>
+    <li>In a terminal window, use <span class="console_input">cd</span> to navigate to your project directory.&nbsp; Type <span class="console_input">grade</span> to grade your program.</li>
+  </ol>
+  <h2>Scoring</h2>
+  <p>testQuit:&nbsp;5 pts<br>
+    testAdd:&nbsp; 15 pts<br>
+    testAddDelete:&nbsp; 10 pts<br>
+    testLoad:&nbsp;5 pts<br>
+    testLoadAddDeleteSave:&nbsp;5 pts<br> 
+    testSourceCode:  5 pts
+    <br>
+    testEdit:&nbsp; 4 pts extra credit<br>
+    testSort:  &nbsp; 8 pts extra credit<br>
+  </p>
+</div>
+<blockquote>&nbsp; </blockquote>
+<p>&nbsp;</p>
+
+
+</body></html>

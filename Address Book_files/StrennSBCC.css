@@ -1,0 +1,355 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	background-repeat: repeat-x;
+	padding:  10px;
+	background-color: #fff;
+}
+h1 {
+	font-size:24pt;
+	padding-top: 30px;
+	padding-bottom: 10px;
+	text-align: center;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #dddddd;
+	text-shadow: 1px 1px white;
+}
+h1.aboveBox {
+	border-bottom-style:none;
+	border-top:solid 1px #dddddd;
+}
+h2, h3 {
+	padding-top: 30px;
+	padding-bottom: 5px;
+	margin-left: 5px;
+	color: #000;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #e0e0e0;
+}
+pre {
+	padding-left: 10px;
+}
+p {
+	padding-left: 10px;
+}
+a:link {
+	color: #000099;
+	text-decoration: none;
+	background-color: transparent;
+	font-family: Arial;
+	font-weight:bold;
+}
+a:visited {
+	color: #000099;
+	text-decoration: none;
+	background-color: transparent;
+	FONT-FAMILY: Arial;
+	font-weight:bold;
+}
+a:hover {
+	color: #D68000;
+	background-color: transparent;
+	FONT-FAMILY: Arial;
+	font-weight:bold;
+}
+td {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: large;
+}
+th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+form {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+}
+input {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+textarea {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+select {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+ul {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	list-style-type: square;
+	list-style-position: outside;
+}
+li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	list-style-position:outside;
+}
+ol {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	list-style-type: decimal;
+	list-style-position: outside;
+}
+.small {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+.big {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+}
+.bodystyle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	margin: 2px;
+	padding: 5px;
+}
+.box1 {
+	border: 1px solid #aaaaaa;
+	background-color:#FFF;
+	padding: 5px;
+}
+.box2 {
+	border: 1px solid #000000;
+}
+.box2Header {
+	background-image: url("https://wfs.sbcc.edu/faculty/spstrenn/web/images/Panel%20Heading_r1_c2.gif");
+	background-repeat: repeat-x;
+	background-color: #550011;
+}
+.panelTL {
+	background-image: url("https://wfs.sbcc.edu/faculty/spstrenn/web/images/Panel%20Heading_r1_c1.gif");
+	background-repeat: no-repeat;
+	width:12px;
+	height:25px;
+}
+.panelTop {
+	background-image: url("https://wfs.sbcc.edu/faculty/spstrenn/web/images/Panel%20Heading_r1_c2.gif");
+	background-repeat: repeat-x;
+	font-weight:bold;
+	text-align: center;
+	color:white;
+	font-size:10pt;
+	width:100%;
+	white-space:nowrap;
+}
+.panelTR {
+	background-image: url("https://wfs.sbcc.edu/faculty/spstrenn/web/images/Panel%20Heading_r1_c3.gif");
+	background-repeat: no-repeat;
+	width:12px;
+	height:25px;
+}
+.panelBody {
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-left-width: 2px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #660000;
+	border-bottom-color: #660000;
+	border-left-color: #660000;
+	background-repeat: repeat-x;
+	background-color:white;
+	padding-top: 8px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+.dataTable {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #000000;
+	font-family: Arial;
+	font-size: 10pt;
+	width: 98%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.dataTable th {
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 10pt;
+	color: white;
+	background-color: #331111;
+	margin-right: 10px;
+}
+.dataTable td {
+	vertical-align: top;
+	font-family: Arial;
+	font-size: 10pt;
+}
+td .dataTable .hidden {
+	display:none;
+}
+th .dataTable .hidden {
+	display:none;
+}
+tr .dataTable .odd {
+	background-color: whitesmoke;
+	font-family: Arial;
+	font-size: 10pt;
+}
+tr .dataTable .even {
+	background-color: gainsboro;
+	font-family: Arial;
+	font-size: 10pt;
+}
+.dataTable th a, .dataTable th a:visited {
+	text-align: left;
+	color: white;
+}
+.dataTable th a:hover {
+	color: #D68000;
+	background-color: transparent;
+}
+.dataTable .order1 {
+	background-position: right;
+	background-image: url("https://wfs.sbcc.edu/faculty/spstrenn/web/images/arrow_down.gif");
+	background-repeat: no-repeat;
+}
+.dataTable .order2 {
+	background-position: right;
+	background-image: url("https://wfs.sbcc.edu/faculty/spstrenn/web/images/arrow_up.gif");
+	background-repeat: no-repeat;
+}
+.boxBlack {
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	padding: 10px 5px 10px 5px;
+	margin: 3px;
+	background-color: white;
+}
+.boxGrey {
+	border: 1px;
+	border-style: solid;
+	border-color: #ccc;
+	padding: 10px 10px 10px 10px;
+	background-color: white;
+}
+.RowMouseOver {
+	background-color: #fff580;
+}
+.heading {
+	padding-left: 3px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	font-weight: bold;
+	color: #000000;
+}
+.heading2 {
+	font-size: 12pt;
+	font-weight: bold;
+	background-color: #dedede;
+	border: 1px solid #bbbbbb;
+	padding: 2px;
+	margin: 10px 2px 3px 2px;
+}
+.assnTitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	font-weight: bold;
+	color: #FFFFFF;
+	padding: 5px;
+}
+label.errHilite {
+	color: red;
+}
+.gainsboroBottomBorder {
+	border-bottom:1px solid gainsboro
+}
+.code {
+	font-family:"Courier New", Courier, mono;
+	font-size:10pt;
+	line-height:2pt;
+	font-weight:bold;
+}
+.loginTextfield {
+	vertical-align:top;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#333;
+	margin:1px;
+	height:20px;
+	border:solid 0 #fff;
+	padding:1px 8px;
+	background: transparent url("https://wfs.sbcc.edu/faculty/spstrenn/web/images/LoginTextfield_bg3.gif") no-repeat fixed;
+	width:75px;
+	voice-family: "\"}\"";
+	voice-family:inherit;
+}
+form>input.loginTextfield {
+	background: transparent url("https://wfs.sbcc.edu/faculty/spstrenn/web/images/LoginTextfield_bg3.gif") no-repeat;
+}
+.loginCheckbox {
+	border-bottom:20px;
+}
+.checkboxListItem {
+	list-style-image:url("https://wfs.sbcc.edu/faculty/spstrenn/web/images/CheckboxEmpty.png");
+}
+.assignmentTitleRow {
+	background-color:#000;
+	color: white;
+	font-size:48px;
+	font-weight:700;
+	font-family:'Droid Sans', Arial, Helvetica, sans-serif;
+	padding:20px;
+	margin-bottom: 20px;
+	text-align:center;
+	text-shadow: 1px 2px 1px #aaa;
+}
+.assignmentTable {
+	border: 1px solid black;
+}
+.assignmentTable td {
+	border-top: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	padding: 5px 2px 5px 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+.assignmentTable th {
+	border: 1px solid black;
+	padding: 2px;
+	background-color: #550011;
+	color: white;
+}
+.lightGrayOutlinedBox {
+	background-color:whitesmoke;
+	border:1px solid gainsboro;
+}
+.code {
+	font-family:"Courier New", Courier, monospace;
+	font-size: 10pt;
+	font-weight: normal;
+	line-height: 10pt;
+}
+.figureRight {
+	float: right;
+	padding: 10px;
+}
+.figureTopRight {
+	float: right;
+	padding: 15px 0px 10px 10px;
+}
+.darkRed {
+	color: #900;
+}
+.grayBackground {
+	background-color: #f0f0f0;
+}
+.console_input {
+	color: #00C;
+	font-family: "Lucida Console", Monaco, monospace;
+}
+.console_output {
+	font-family: "Lucida Console", Monaco, monospace;
+}
